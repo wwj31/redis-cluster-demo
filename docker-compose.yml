@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  node_1:
+    build: .
+    ports:
+      - "9001:6379"
+
+  node_1_cluster:
+    build: .
+    ports:
+      - "9002:6379"
+
+  node_2:
+    build: .
+    ports:
+      - "9003:6379"
+
+  node_2_cluster:
+    build: .
+    ports:
+      - "9004:6379"
+
+  node_3:
+    build: .
+    ports:
+      - "9005:6379"
+
+  node_3_cluster:
+    build: .
+    ports:
+      - "9006:6379"
