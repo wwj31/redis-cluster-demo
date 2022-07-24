@@ -12,6 +12,7 @@ fi
 
 docker compose up -d
 
+#docker compose 会创建 "当前目录名_default" 的默认网桥,并把所有启动的container都设置在次网桥下作为子网
 docker network inspect redis-cluster-demo_default | grep "IPv4Address" | awk -F\" '{print $4}' | awk -F/ '{print $1 > ".addr.txt"}'
 
 for addr in `cat .addr.txt`
