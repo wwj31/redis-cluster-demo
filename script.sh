@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOST=$1
+read -p "enter your local IP(192.168.x.x):" HOST
 
 echo IP=${HOST} > .env
 docker compose up -d
