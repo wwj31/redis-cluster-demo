@@ -3,29 +3,78 @@ services:
   node_1:
     build: .
     ports:
-      - "9001:6379"
+      - "6379:6379"
+      - "16379:16379"
+    entrypoint:
+      - redis-server
+      - redis.conf
+      - --port 
+      - "6379"
+      - --cluster-announce-ip
+      - ${IP}
 
   node_1_cluster:
     build: .
     ports:
-      - "9002:6379"
+      - "6002:6002"
+      - "16002:16002"
+    entrypoint:
+      - redis-server
+      - redis.conf
+      - --port
+      - "6002" 
+      - --cluster-announce-ip
+      - ${IP}
 
   node_2:
     build: .
     ports:
-      - "9003:6379"
+      - "6003:6003"
+      - "16003:16003"
+    entrypoint:
+      - redis-server
+      - redis.conf
+      - --port
+      - "6003" 
+      - --cluster-announce-ip
+      - ${IP}
 
   node_2_cluster:
     build: .
     ports:
-      - "9004:6379"
+      - "6004:6004"
+      - "16004:16004"
+    entrypoint:
+      - redis-server
+      - redis.conf
+      - --port
+      - "6004" 
+      - --cluster-announce-ip
+      - ${IP}
 
   node_3:
     build: .
     ports:
-      - "9005:6379"
+      - "6005:6005"
+      - "16005:16005"
+    entrypoint:
+      - redis-server
+      - redis.conf
+      - --port
+      - "6005" 
+      - --cluster-announce-ip
+      - ${IP}
 
   node_3_cluster:
     build: .
     ports:
-      - "9006:6379"
+      - "6006:6006"
+      - "16006:16006"
+    entrypoint:
+      - redis-server
+      - redis.conf
+      - --port
+      - "6006" 
+      - --cluster-announce-ip
+      - ${IP}
+
